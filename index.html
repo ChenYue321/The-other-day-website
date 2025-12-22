@@ -2,8 +2,8 @@
 <html lang="zh-CN">
     <head>
         <title>theotherday</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
         <style>
             body {
                 margin: 0;
@@ -16,13 +16,13 @@
                 left: 0;
                 width: 100%;
                 height: 140px;
+                padding: 16px;
                 background-image: url('header_bg.jpg');
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
-                z-index: 1000; /* ensures header stays above content */
                 box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                padding: 16px;
+                z-index: 1000; /* ensures header stays above content */
             }
             .header h1 {
                 margin: 0;
@@ -33,10 +33,10 @@
             }
             .header h2 {
                 margin: 0;
+                padding-left: 24px; /* shift a little to the right */
                 font-family: 'Noto Sans SC', sans-serif;
                 font-size: 40px;
                 line-height: 1.0;
-                padding-left: 24px; /* shift a little to the right */
                 text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* smaller shadow than h1 */
             }
 
@@ -49,10 +49,14 @@
                 gap: 16px; /* space between left and right boxes */
                 flex-wrap: wrap; /* allows wrapping on small screens */
             }
+            .left-blocks {
+                display: flex;
+                flex-direction: column; /* stack left blocks vertically */
+                gap: 16px; /* space between top and bottom left blocks */
+                flex: 0.24; /* combined left blocks take 24% of container width */
+            }
 
             .flex-box-left {
-                flex: 0.15; /* left box takes 15% of container */
-                min-width: 50px;
                 border: 2px solid #333;
                 border-radius: 12px;
                 padding: 16px;
@@ -60,8 +64,7 @@
                 background-color: #f9f9f9;
             }
             .flex-box-right {
-                flex: 0.85; /* right box takes 85% of container */
-                min-width: 250px;
+                flex: 1; /* right box takes remaining space */
                 border: 2px solid #333;
                 border-radius: 12px;
                 padding: 16px;
@@ -78,80 +81,24 @@
 
         <div class="content">
             <div class="flex-container">
-                <div class="flex-box-left">
-                    <p>
-                        Left content line 1<br>Left content line 2<br>Left content line 3<br>
-                        Left content line 4<br>Left content line 5<br>Left content line 6<br>
-                        Left content line 7<br>Left content line 8<br>Left content line 9<br>
-                        Left content line 10<br>Left content line 11<br>Left content line 12<br>
-                        Left content line 13<br>Left content line 14<br>Left content line 15<br>
-                        Left content line 16<br>Left content line 17<br>Left content line 18<br>
-                        Left content line 19<br>Left content line 20<br>
-                        Left content line 21<br>Left content line 22<br>Left content line 23<br>
-                        Left content line 24<br>Left content line 25<br>Left content line 26<br>
-                        Left content line 27<br>Left content line 28<br>Left content line 29<br>
-                        Left content line 30<br>Left content line 31<br>Left content line 32<br>
-                        Left content line 33<br>Left content line 34<br>Left content line 35<br>
-                        Left content line 36<br>Left content line 37<br>Left content line 38<br>
-                        Left content line 39<br>Left content line 40<br>Left content line 41<br>
-                        Left content line 42<br>Left content line 43<br>Left content line 44<br>
-                        Left content line 45<br>Left content line 46<br>Left content line 47<br>
-                        Left content line 48<br>Left content line 49<br>Left content line 50<br>
-                        Left content line 51<br>Left content line 52<br>Left content line 53<br>
-                        Left content line 54<br>Left content line 55<br>Left content line 56<br>
-                        Left content line 57<br>Left content line 58<br>Left content line 59<br>
-                        Left content line 60<br>Left content line 61<br>Left content line 62<br>
-                        Left content line 63<br>Left content line 64<br>Left content line 65<br>
-                        Left content line 66<br>Left content line 67<br>Left content line 68<br>
-                        Left content line 69<br>Left content line 70<br>Left content line 71<br>
-                        Left content line 72<br>Left content line 73<br>Left content line 74<br>
-                        Left content line 75<br>Left content line 76<br>Left content line 77<br>
-                        Left content line 78<br>Left content line 79<br>Left content line 80<br>
-                        Left content line 81<br>Left content line 82<br>Left content line 83<br>
-                        Left content line 84<br>Left content line 85<br>Left content line 86<br>
-                        Left content line 87<br>Left content line 88<br>Left content line 89<br>
-                        Left content line 90<br>Left content line 91<br>Left content line 92<br>
-                        Left content line 93<br>Left content line 94<br>Left content line 95<br>
-                        Left content line 96<br>Left content line 97<br>Left content line 98<br>
-                        Left content line 99<br>Left content line 100<br>
-                    </p>
+                <div class="left-blocks">
+                    <div class="flex-box-left">
+                        <p>
+                            Left top content line 1<br>Left top content line 2<br>Left top content line 3<br>
+                            Left top content line 4<br>Left top content line 5<br>
+                        </p>
+                    </div>
+                    <div class="flex-box-left">
+                        <p>
+                            Left bottom content line 1<br>Left bottom content line 2<br>Left bottom content line 3<br>
+                            Left bottom content line 4<br>Left bottom content line 5<br>
+                        </p>
+                    </div>
                 </div>
                 <div class="flex-box-right">
                     <p>
                         Right content line 1<br>Right content line 2<br>Right content line 3<br>
-                        Right content line 4<br>Right content line 5<br>Right content line 6<br>
-                        Right content line 7<br>Right content line 8<br>Right content line 9<br>
-                        Right content line 10<br>Right content line 11<br>Right content line 12<br>
-                        Right content line 13<br>Right content line 14<br>Right content line 15<br>
-                        Right content line 16<br>Right content line 17<br>Right content line 18<br>
-                        Right content line 19<br>Right content line 20<br>
-                        Right content line 21<br>Right content line 22<br>Right content line 23<br>
-                        Right content line 24<br>Right content line 25<br>Right content line 26<br>
-                        Right content line 27<br>Right content line 28<br>Right content line 29<br>
-                        Right content line 30<br>Right content line 31<br>Right content line 32<br>
-                        Right content line 33<br>Right content line 34<br>Right content line 35<br>
-                        Right content line 36<br>Right content line 37<br>Right content line 38<br>
-                        Right content line 39<br>Right content line 40<br>Right content line 41<br>
-                        Right content line 42<br>Right content line 43<br>Right content line 44<br>
-                        Right content line 45<br>Right content line 46<br>Right content line 47<br>
-                        Right content line 48<br>Right content line 49<br>Right content line 50<br>
-                        Right content line 51<br>Right content line 52<br>Right content line 53<br>
-                        Right content line 54<br>Right content line 55<br>Right content line 56<br>
-                        Right content line 57<br>Right content line 58<br>Right content line 59<br>
-                        Right content line 60<br>Right content line 61<br>Right content line 62<br>
-                        Right content line 63<br>Right content line 64<br>Right content line 65<br>
-                        Right content line 66<br>Right content line 67<br>Right content line 68<br>
-                        Right content line 69<br>Right content line 70<br>Right content line 71<br>
-                        Right content line 72<br>Right content line 73<br>Right content line 74<br>
-                        Right content line 75<br>Right content line 76<br>Right content line 77<br>
-                        Right content line 78<br>Right content line 79<br>Right content line 80<br>
-                        Right content line 81<br>Right content line 82<br>Right content line 83<br>
-                        Right content line 84<br>Right content line 85<br>Right content line 86<br>
-                        Right content line 87<br>Right content line 88<br>Right content line 89<br>
-                        Right content line 90<br>Right content line 91<br>Right content line 92<br>
-                        Right content line 93<br>Right content line 94<br>Right content line 95<br>
-                        Right content line 96<br>Right content line 97<br>Right content line 98<br>
-                        Right content line 99<br>Right content line 100<br>
+                        Right content line 4<br>Right content line 5<br>
                     </p>
                 </div>
             </div>
