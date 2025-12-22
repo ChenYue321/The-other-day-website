@@ -39,6 +39,14 @@
                 line-height: 1.0;
                 text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* smaller shadow than h1 */
             }
+            .header-link {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .header-link:hover {
+                text-decoration: underline;
+            }
 
             .content {
                 margin-top: 200px;
@@ -101,7 +109,7 @@
     </head>
     <body>
         <div class="header">
-            <h1>The other day</h1>
+            <h1><a href="index.html" class="header-link">The other day</a></h1>
             <h2>-我们歌颂生命的精致，同样歌颂死亡的绚烂-</h2>
         </div>
 
