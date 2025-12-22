@@ -1,16 +1,134 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>基础信息</title>
-    <style>
-        body { font-family: sans-serif; padding: 40px; }
-        a { text-decoration: none; color: #007ACC; }
-    </style>
-</head>
-<body>
-    <h1>基础信息</h1>
-    <p>页面正在建设中……</p>
-    <p><a href="index.html">返回主页</a></p>
-</body>
+    <head>
+        <title>theotherday</title>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                font-family: sans-serif;
+            }
+
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 140px;
+                padding: 16px;
+                background-image: url('header_bg.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                z-index: 1000; /* ensures header stays above content */
+            }
+            .header h1 {
+                margin: 0;
+                font-family: 'Great Vibes', cursive;
+                font-size: 72px;
+                line-height: 1.2;
+                text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            }
+            .header h2 {
+                margin: 0;
+                padding-left: 24px; /* shift a little to the right */
+                font-family: 'Noto Sans SC', sans-serif;
+                font-size: 40px;
+                line-height: 1.0;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* smaller shadow than h1 */
+            }
+
+            .content {
+                margin-top: 200px;
+                padding: 16px 256px;
+            }
+            .flex-container {
+                display: flex;
+                gap: 16px; /* space between left and right boxes */
+                flex-wrap: wrap; /* allows wrapping on small screens */
+            }
+            .left-blocks {
+                display: flex;
+                flex-direction: column; /* stack left blocks vertically */
+                gap: 16px; /* space between top and bottom left blocks */
+                flex: 0.24; /* combined left blocks take 24% of container width */
+            }
+
+            .flex-box-left {
+                border: 2px solid #333;
+                border-radius: 12px;
+                padding: 16px;
+                box-sizing: border-box;
+                background-color: #f9f9f9;
+            }
+            .flex-box-right {
+                flex: 1; /* right box takes remaining space */
+                border: 2px solid #333;
+                border-radius: 12px;
+                padding: 16px;
+                box-sizing: border-box;
+                background-color: #f9f9f9;
+            }
+            .flex-box-left h3 {
+                margin-top: 0;
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            .key-links {
+                list-style-type: none;
+                padding-left: 0;
+                margin: 8px 0 0 0;
+            }
+
+            .key-links li {
+                margin: 8px 0;
+            }
+
+            .key-links li a {
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+            }
+
+            .key-links li a:hover {
+                color: #007ACC;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>The other day</h1>
+            <h2>-我们歌颂生命的精致，同样歌颂死亡的绚烂-</h2>
+        </div>
+
+        <div class="content">
+            <div class="flex-container">
+                <div class="left-blocks">
+                    <div class="flex-box-left">
+                        <h3>关键内容</h3>
+                        <ul class="key-links">
+                            <li><a href="basic_info.html">基础信息</a></li>
+                            <li><a href="members.html">现有人员</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex-box-left">
+                        <p>
+                            Left bottom content line 1<br>Left bottom content line 2<br>Left bottom content line 3<br>
+                            Left bottom content line 4<br>Left bottom content line 5<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-box-right">
+                    <p>
+                        <h2>基础信息</h2><br>Right content line 2<br>Right content line 3<br>
+                        Right content line 4<br>Right content line 5<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
