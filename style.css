@@ -1,0 +1,191 @@
+/* The other day — 全站共享样式
+   页面结构：固定头部 + 左窄右宽两栏内容区 */
+
+/* ---------- 基础 ---------- */
+body {
+    margin: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+/* ---------- 固定头部 ---------- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    padding: 16px;
+    background-image: url('header_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* ensures header stays above content */
+}
+
+.header h1 {
+    margin: 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: 72px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.header h2 {
+    margin: 0;
+    padding-left: 24px; /* shift a little to the right */
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 40px;
+    line-height: 1.0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* smaller shadow than h1 */
+}
+
+.header-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- 内容区 ---------- */
+.content {
+    margin-top: 200px;
+    padding: 16px 256px;
+}
+
+.flex-container {
+    display: flex;
+    gap: 16px; /* space between left and right boxes */
+    flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+.left-blocks {
+    display: flex;
+    flex-direction: column; /* stack left blocks vertically */
+    gap: 16px; /* space between top and bottom left blocks */
+    flex: 0.24; /* combined left blocks take 24% of container width */
+}
+
+.flex-box-left,
+.flex-box-right {
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.flex-box-right {
+    flex: 1; /* right box takes remaining space */
+}
+
+.flex-box-left h3 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.flex-box-right h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* ---------- 侧栏导航 ---------- */
+.key-links {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 8px 0 0 0;
+}
+
+.key-links li {
+    margin: 8px 0;
+}
+
+.key-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.key-links li a:hover {
+    color: #007ACC;
+    text-decoration: underline;
+}
+
+/* ---------- 人员页段落标题 ---------- */
+.member-section {
+    font-size: 24px;      /* larger than default h3 */
+    font-weight: 700;     /* bold */
+    margin-top: 16px;     /* space above */
+    margin-bottom: 8px;   /* space below */
+    line-height: 1.2;     /* line spacing */
+}
+
+/* ---------- 响应式 ----------
+   桌面端以上样式保持原样；窄屏逐级收窄留白，
+   820px 以下头部改为随文档流、侧栏转为横向排布。 */
+
+@media (max-width: 1100px) {
+    .content {
+        padding: 16px 64px;
+    }
+}
+
+@media (max-width: 820px) {
+    .header {
+        position: relative;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .header h1 {
+        font-size: 56px;
+    }
+
+    .header h2 {
+        font-size: 28px;
+        padding-left: 8px;
+    }
+
+    .content {
+        margin-top: 0;
+        padding: 24px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .left-blocks {
+        flex: 0 0 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .left-blocks .flex-box-left {
+        flex: 1 1 240px;
+    }
+
+    .flex-box-right {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .header h1 {
+        font-size: 40px;
+    }
+
+    .header h2 {
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    .content {
+        padding: 16px;
+    }
+}
