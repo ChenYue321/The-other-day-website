@@ -87,9 +87,19 @@ body {
     font-weight: 700;
 }
 
-.flex-box-right h2 {
+/* ---------- 右侧区块标题与分隔线 ---------- */
+.flex-box-right > h1,
+.flex-box-right > h2 {
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 0;
+}
+
+/* 比区块窄一圈的横线，左右各留 16px 空白 */
+.divider {
+    height: 0;
+    margin: 14px 16px 20px;
+    border: none;
+    border-top: 2px solid #333;
 }
 
 /* ---------- 侧栏导航 ---------- */
