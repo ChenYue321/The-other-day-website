@@ -123,6 +123,17 @@ body {
     line-height: 1.2;     /* line spacing */
 }
 
+/* ---------- 成员姓名链接 ---------- */
+.member-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.member-link:hover {
+    color: #007ACC;
+    text-decoration: underline;
+}
+
 /* ---------- 响应式 ----------
    桌面端以上样式保持原样；窄屏逐级收窄留白，
    820px 以下头部改为随文档流、侧栏转为横向排布。 */
