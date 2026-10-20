@@ -164,6 +164,23 @@ body {
     margin-left: 40px;
 }
 
+/* ---------- 文章标题下的作者与日期 ---------- */
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 16px;
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: #7a756e;
+}
+
+/* ---------- 文章正文 ---------- */
+/* 诗歌体靠 <br> 保留每一处换行，行距放宽一档便于逐行阅读 */
+.post-body {
+    line-height: 1.9;
+}
+
 /* ---------- 年份折叠列表 ---------- */
 .year-group {
     border-bottom: 1px solid #ece8e2;
