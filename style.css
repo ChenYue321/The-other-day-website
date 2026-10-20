@@ -176,9 +176,32 @@ body {
 }
 
 /* ---------- 文章正文 ---------- */
-/* 诗歌体靠 <br> 保留每一处换行，行距放宽一档便于逐行阅读 */
+/* 诗歌体：靠 <br> 保留每一处换行，行距放宽一档便于逐行阅读 */
 .post-body {
     line-height: 1.9;
+}
+
+/* 散文体：段间留出接近一整行的空白，行距比诗歌紧一档 */
+.post-text {
+    line-height: 1.75;
+    margin: 0 0 1.5em;
+}
+
+/* 文末关联链接：与正文用同一条分隔线隔开，右对齐 */
+.post-next {
+    margin: 0;
+    text-align: right;
+    font-size: 15px;
+}
+
+.post-next a {
+    color: #333;
+    text-decoration: none;
+}
+
+.post-next a:hover {
+    color: #007ACC;
+    text-decoration: underline;
 }
 
 /* ---------- 年份折叠列表 ---------- */
