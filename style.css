@@ -177,10 +177,10 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 0;
-    font-size: 20px;
-    font-weight: 700;
-    color: #2e2e2e;
+    padding: 11px 0;
+    font-size: 16px;      /* 与左侧栏正文一致 */
+    font-weight: 500;
+    color: #333;
     cursor: pointer;
     list-style: none;                 /* 去掉浏览器默认三角 */
     user-select: none;
@@ -196,9 +196,9 @@ body {
     flex: 0 0 auto;
     width: 0;
     height: 0;
-    border-left: 7px solid #8a837a;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
+    border-left: 6px solid #8a837a;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
     transition: transform 0.18s ease;
 }
 
