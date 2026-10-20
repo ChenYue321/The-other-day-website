@@ -54,9 +54,14 @@ body {
 }
 
 /* ---------- 内容区 ---------- */
+/* --gutter 统一控制左右留白，正文和页脚共用，避免两处各写一套 */
+:root {
+    --gutter: 256px;
+}
+
 .content {
     margin-top: 200px;
-    padding: 16px 256px;
+    padding: 16px var(--gutter);
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
@@ -159,9 +164,11 @@ body {
 }
 
 /* ---------- 页脚 ---------- */
+/* 通栏：横线与左右留白都和 header 一致（16px），品牌与头部标题同一条竖线 */
 .site-footer {
-    margin-top: auto;   /* 内容不足一屏时压到最底 */
-    padding-top: 22px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px 16px 28px;
     border-top: 1px solid #ddd8d1;
     display: flex;
     flex-wrap: wrap;
@@ -238,8 +245,8 @@ body {
    820px 以下头部改为随文档流、侧栏转为横向排布。 */
 
 @media (max-width: 1100px) {
-    .content {
-        padding: 16px 64px;
+    :root {
+        --gutter: 64px;
     }
 }
 
@@ -259,9 +266,13 @@ body {
         padding-left: 8px;
     }
 
+    :root {
+        --gutter: 24px;
+    }
+
     .content {
         margin-top: 0;
-        padding: 24px;
+        padding: 24px var(--gutter);
     }
 
     .flex-container {
@@ -295,7 +306,11 @@ body {
         line-height: 1.25;
     }
 
+    :root {
+        --gutter: 16px;
+    }
+
     .content {
-        padding: 16px;
+        padding: 16px var(--gutter);
     }
 }
