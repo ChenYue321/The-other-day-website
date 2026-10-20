@@ -5,6 +5,10 @@
 body {
     margin: 0;
     font-family: 'Noto Sans SC', sans-serif;
+    /* 让页脚在内容不足一屏时也能贴到窗口底部 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ---------- 固定头部 ---------- */
@@ -53,12 +57,16 @@ body {
 .content {
     margin-top: 200px;
     padding: 16px 256px;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .flex-container {
     display: flex;
     gap: 16px; /* space between left and right boxes */
     flex-wrap: wrap; /* allows wrapping on small screens */
+    margin-bottom: 56px;
 }
 
 .left-blocks {
@@ -148,6 +156,81 @@ body {
 /* 缩进到与列表项文字同一级，从属于上方的人物标题 */
 .member-bio {
     margin-left: 40px;
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+    margin-top: auto;   /* 内容不足一屏时压到最底 */
+    padding-top: 22px;
+    border-top: 1px solid #ddd8d1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 32px;
+    align-items: baseline;
+    justify-content: space-between;
+    color: #7a756e;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px 32px;
+    width: 100%;
+}
+
+.footer-brand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    line-height: 1.2;
+    color: #4a443d;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #7a756e;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #007ACC;
+    text-decoration: underline;
+}
+
+.footer-meta {
+    width: 100%;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #eeebe6;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #a29c94;
+}
+
+.footer-meta a {
+    color: #7a756e;
+    text-decoration: underline;
+    text-decoration-color: #cfc9c1;
+    text-underline-offset: 2px;
+}
+
+.footer-meta a:hover {
+    color: #007ACC;
+    text-decoration-color: currentColor;
 }
 
 /* ---------- 响应式 ----------
