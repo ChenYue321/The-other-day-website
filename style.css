@@ -164,6 +164,77 @@ body {
     margin-left: 40px;
 }
 
+/* ---------- 年份折叠列表 ---------- */
+.year-group {
+    border-bottom: 1px solid #ece8e2;
+}
+
+.year-group:last-of-type {
+    border-bottom: none;
+}
+
+.year-group > summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2e2e2e;
+    cursor: pointer;
+    list-style: none;                 /* 去掉浏览器默认三角 */
+    user-select: none;
+}
+
+.year-group > summary::-webkit-details-marker {
+    display: none;                    /* Safari 的默认三角也要去掉 */
+}
+
+/* 自己画的三角：向右，展开时转成向下 */
+.year-group > summary::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 0;
+    height: 0;
+    border-left: 7px solid #8a837a;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    transition: transform 0.18s ease;
+}
+
+.year-group[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.year-group > summary:hover {
+    color: #007ACC;
+}
+
+.work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px 17px;           /* 与年份文字左对齐 */
+}
+
+.work-list li {
+    margin: 6px 0;
+}
+
+.work-list a {
+    color: #333;
+    text-decoration: none;
+}
+
+.work-list a:hover {
+    color: #007ACC;
+    text-decoration: underline;
+}
+
+.work-empty {
+    color: #b0a9a0;
+    font-size: 14px;
+}
+
 /* ---------- 页脚 ---------- */
 /* 通栏：横线与左右留白都和 header 一致（16px），品牌与头部标题同一条竖线 */
 .site-footer {
