@@ -94,10 +94,10 @@ body {
     margin-bottom: 0;
 }
 
-/* 比区块窄一圈的横线，左右各留 16px 空白 */
+/* 左右与正文、标题对齐；与卡片边框的留白由 .flex-box-* 的 padding 提供 */
 .divider {
     height: 0;
-    margin: 14px 16px 20px;
+    margin: 14px 0 20px;
     border: none;
     border-top: 2px solid #333;
 }
