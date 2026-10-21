@@ -280,6 +280,33 @@ body {
     font-size: 14px;
 }
 
+/* 个人页的作品列表 */
+.profile-works-title {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6b6459;
+}
+
+.profile-year-title {
+    margin: 16px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b6459;
+}
+
+.profile-month-title {
+    margin: 6px 0 0;
+    padding-left: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #a0968a;
+}
+
+.profile-works {
+    padding: 0 0 0 21px;              /* 作品比月份再退一格 */
+}
+
 /* 月份分组：年份展开后，按月份分段 */
 .month-group {
     margin: 0 0 6px;
