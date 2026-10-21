@@ -138,6 +138,17 @@ body {
     text-decoration: underline;
 }
 
+/* 作者分类页：人多时排成多列，窄屏自动减列 */
+.author-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0 24px;
+}
+
+.author-list li {
+    margin: 6px 0;
+}
+
 /* ---------- 人员页段落标题 ---------- */
 .member-section {
     font-size: 24px;      /* larger than default h3 */
