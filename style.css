@@ -204,6 +204,11 @@ body {
     text-decoration: underline;
 }
 
+/* 同一篇里有两个跳转时（← 上一篇    下一篇 →），中间留出间距 */
+.post-next a + a {
+    margin-left: 32px;
+}
+
 /* ---------- 年份折叠列表 ---------- */
 .year-group {
     border-bottom: 1px solid #ece8e2;
@@ -273,6 +278,46 @@ body {
 .work-empty {
     color: #b0a9a0;
     font-size: 14px;
+}
+
+/* 月份分组：年份展开后，按月份分段 */
+.month-group {
+    margin: 0 0 6px;
+}
+
+.month-group .work-list {
+    padding: 0 0 0 26px;              /* 作品再缩进 9px，与月份标题拉开层次 */
+}
+
+.month-title {
+    margin: 14px 0 0;
+    padding-left: 17px;               /* 与 .work-list 的作品标题对齐 */
+    font-size: 14px;
+    font-weight: 500;
+    color: #8a837a;
+    letter-spacing: 0.02em;
+}
+
+.month-title-pinned {
+    color: #a89680;
+}
+
+/* 置顶作品：同一年份里排在前面，标题加粗并带一枚小标记 */
+.work-pinned > a {
+    font-weight: 600;
+}
+
+.work-pinned > a::after {
+    content: "置顶";
+    display: inline-block;
+    margin-left: 8px;
+    padding: 0 5px;
+    border: 1px solid #d8cfc2;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #a89680;
+    vertical-align: 2px;
 }
 
 /* ---------- 页脚 ---------- */
